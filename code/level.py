@@ -18,7 +18,7 @@ class Level:
         self.visible_sprites = YsortCameragroup()
         self.obstacle_sprites = pygame.sprite.Group()
         #attack sprites
-        self.current_attack = None
+        self.current_attack = None   
         #sprite setup
         self.create_map()
         #user interface
@@ -51,10 +51,16 @@ class Level:
 
         self.player = Player((2000,1430),
                              [self.visible_sprites], self.obstacle_sprites, 
-                             self.create_attack, self.destroy_attack)
+                             self.create_attack, self.destroy_attack,
+                             self.create_magic)
 
     def create_attack(self):
         self.current_attack = Weapon(self.player, [self.visible_sprites])
+
+    def create_magic(self,style,strenght,cost):
+        print(style)
+        print(strenght)
+        print(cost)
     
     def destroy_attack(self):
         if self.current_attack:
