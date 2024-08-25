@@ -19,6 +19,3 @@ def import_folder(path):
             image_surf = pygame.image.load(full_path).convert_alpha()
             surface_list.append(image_surf)
     return surface_list
-
-#import_folder('graphics/grass')
-#print(import_csv_layout('map/map_FloorBlocks.csv'))
